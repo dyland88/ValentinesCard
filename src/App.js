@@ -2,7 +2,7 @@ import { useState } from 'react';
 import confetti from 'canvas-confetti';
 
 const noPhrases = ['no', 'pleaseee', 'I hate puppies', 'I am picking the wrong choice', 'whyyyyyyy', 'This is your LAST CHANCE', 'FR FR you better not do it this time']
-const yesPhrases = ['yes', 'YES', 'YES!!!', 'PICK THIS ONE!!!', 'why u no click me :(', 'yes 🥺', "of course!!!"]
+const yesPhrases = ['yes', 'YES', 'YES!!!', 'PICK THIS ONE!!!', 'why u no click me :(', 'yes 🥺', "OF COURSE!!!"]
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [noButtonStyle, setNoButtonStyle] = useState({});
   const [showNo, setShowNo] = useState(true);
+  const [imageSrc, setImageSrc] = useState('https://media1.tenor.com/m/HzAhXPf2YOEAAAAC/milk-and-mocha.gif');
 
 
   // Moves the button when when mouseover
@@ -48,6 +49,7 @@ function App() {
 const onYesClick = () => {
   launchConfetti();
   setShowNo(false);
+  setImageSrc('https://media1.tenor.com/m/wbntPv9hoXoAAAAC/cuddle-panda.gif')
 }
 const launchConfetti = () => {
   
@@ -65,7 +67,7 @@ const launchConfetti = () => {
       <div>
         <div className="flex justify-center pb-10">
           <img 
-            src="https://media1.tenor.com/m/HzAhXPf2YOEAAAAC/milk-and-mocha.gif" 
+            src={imageSrc}
             alt="PLEASEEE"
             style={{ width: 'auto', height: '300px'}}/>
         </div>
@@ -81,7 +83,7 @@ const launchConfetti = () => {
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration 300"
             style={{ fontSize: `${(phraseIndex + 1) * 15}px`}}
             onClick={onYesClick}>
-              Yes!!!
+              {yesPhrases[phraseIndex]}
             </button>
 
             {showNo && <div className="flex justify-center items-center text-center">
