@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ValentinesCard/static/css/main.33da91cf.css",
+    "main.js": "/ValentinesCard/static/js/main.7d37c3a5.js",
+    "index.html": "/ValentinesCard/index.html",
+    "main.33da91cf.css.map": "/ValentinesCard/static/css/main.33da91cf.css.map",
+    "main.7d37c3a5.js.map": "/ValentinesCard/static/js/main.7d37c3a5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33da91cf.css",
+    "static/js/main.7d37c3a5.js"
+  ]
+}
