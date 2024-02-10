@@ -10,7 +10,11 @@ function App() {
   // Called when the "No" button is clicked
   const onNoClick = () => {
     handleMouseOver();
-    setPhraseIndex(Math.min(phraseIndex + 1, noPhrases.length - 1));
+    setPhraseIndex(phraseIndex + 1);
+    setNoButtonStyle({
+      ...noButtonStyle,
+      fontSize: `${20 - 2 * phraseIndex}px`
+    });
   }
 
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -41,8 +45,10 @@ function App() {
   const moveY = generateRandom(-100, 100, (phraseIndex * 10) + 20);
   // Set the button to move to the new position
   setNoButtonStyle({
+    ...noButtonStyle,
     transform: `translate(${moveX}px, ${moveY}px)`,
     transition: 'transform 0.3s ease-in-out',
+
   });
 }
 
@@ -83,7 +89,7 @@ const launchConfetti = () => {
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration 300"
             style={{ fontSize: `${(phraseIndex + 1) * 15}px`}}
             onClick={onYesClick}>
-              {yesPhrases[phraseIndex]}
+              {yesPhrases[phraseIndex % (yesPhrases.length)]}
             </button>
 
             {showNo && <div className="flex justify-center items-center text-center">
@@ -93,7 +99,8 @@ const launchConfetti = () => {
               onMouseOver={handleMouseOver}
               className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition duration 300"
               >
-                {noPhrases[phraseIndex]}
+                {/*Sets the no button text to the according entry in noPhrases*/}
+                {noPhrases[phraseIndex % (noPhrases.length)]}
                 </button>
               
               </div>}
