@@ -5,6 +5,7 @@ import vineBoom from './audio/vine_boom.mp3';
 import yippee from './audio/yippee.mp3';
 import ahh from './audio/ahh.mp3';
 import chipichipi from './audio/chipichipi.mp3';
+import raccoonHeart from './images/raccoon_heart.jpg';
 
 const noPhrases = ['no', 'pleaseee', 'I hate puppies', 'I am picking the wrong choice', 'whyyyyyyy', 'This is your LAST CHANCE', 'FR FR you better not do it this time']
 const yesPhrases = ['yes', 'YES', 'YES!!!', 'PICK THIS ONE!!!', 'why u no click me :(', 'yes 🥺', "OF COURSE!!!"]
@@ -15,7 +16,7 @@ function App() {
   const [yesButtonPressed, setYesButtonPressed] = useState(false);
 
   const [showNo, setShowNo] = useState(true);
-  const [imageSrc, setImageSrc] = useState('https://media1.tenor.com/m/HzAhXPf2YOEAAAAC/milk-and-mocha.gif');
+  const [imageSrc, setImageSrc] = useState(raccoonHeart);
 
 
   // Called when the "No" button is clicked
@@ -34,7 +35,10 @@ function App() {
 
   const onYesClick = () => {
     new Audio(yippee).play();
-    new Audio(chipichipi).play();
+    if(!yesButtonPressed){
+      setTimeout(()=>{new Audio(chipichipi).play();}, 1500);
+    }
+    
     setYesButtonPressed(true);
     launchConfetti();
     setShowNo(false);
@@ -82,7 +86,8 @@ function App() {
 
   return (
     <main className="w-screen h-screen overflow-hidden flex justify-center items-center bg-white-100"
-    style={{ backgroundImage: `${yesButtonPressed ? `url(${heartBackground})` : 'none'}` }}>
+    style={{backgroundImage: `${yesButtonPressed ? `url(${heartBackground})` : 'none'}`
+    }}>
       {/* This div centers the content horizontally */}
      
       <div>
@@ -94,10 +99,10 @@ function App() {
         </div>
         
         <div className="text-center">
-            <div className="rounded-full bg-white">
-            <h1 className="text-3xl font-bold rounded-xl bg-red-300 px-5 py-4">
+            <div>
+            <h1 className="outline outline-3 outline-offset-2 outline-cyan-500 text-3xl font-bold rounded-xl bg-gradient-to-r from-pink-500 to-red-500 px-5 py-4">
               <div>
-                {yesButtonPressed ? "I love you!!💖💖💖" : "Will you be my valentine?"}
+                {yesButtonPressed ? <span style={{ color: 'white', textShadow: '2px 2px 0px black' }}>I love you!!💖💖💖</span> : <span style={{ color: 'white', textShadow: '2px 2px 1px black' }}>Will you be my valentine?</span>}
               </div>
             </h1>
           </div>
@@ -107,8 +112,8 @@ function App() {
             {/*Sets the button size to increase over time or be 100 if yesButton is pressed*/}
             <button
             
-            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration 300"
-            style={{ fontSize: `${( yesButtonPressed ? 150 : (phraseIndex + 1.5) * 15)}px`}}
+            className="outline outline-3 outline-green-700 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition duration 300 hover:shadow-lg"
+            style={{fontSize: `${( yesButtonPressed ? 150 : (phraseIndex + 1.5) * 15)}px`}}
             onClick={onYesClick}>
               {yesButtonPressed ? "YIPPEE" : yesPhrases[phraseIndex % (yesPhrases.length)]}
             </button>
@@ -117,9 +122,9 @@ function App() {
             {showNo && <div className="flex justify-center items-center text-center">
               <button
               onClick={onNoClick}
-              style={noButtonStyle}
+              style={{ ...noButtonStyle, cursor: 'not-allowed' }}
               onMouseOver={handleMouseOver}
-              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition duration 300"
+              className="shadow-inner px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition duration 300"
               >
                 {/*Sets the no button text to the according entry in noPhrases*/}
                 {noPhrases[phraseIndex % (noPhrases.length)]}
