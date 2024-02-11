@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/ValentinesCard/static/css/main.33da91cf.css",
-    "main.js": "/ValentinesCard/static/js/main.7d37c3a5.js",
+    "main.css": "/ValentinesCard/static/css/main.e46ec93b.css",
+    "main.js": "/ValentinesCard/static/js/main.8c1bb336.js",
+    "static/media/hearts.jpg": "/ValentinesCard/static/media/hearts.781c3e0fa2cdcf2d91e8.jpg",
+    "static/media/vine_boom.mp3": "/ValentinesCard/static/media/vine_boom.84bc79367eed08f227a7.mp3",
+    "static/media/ahh.mp3": "/ValentinesCard/static/media/ahh.98be230bb36ee425ef0e.mp3",
+    "static/media/yippee.mp3": "/ValentinesCard/static/media/yippee.dd360f2f1555606d607e.mp3",
     "index.html": "/ValentinesCard/index.html",
-    "main.33da91cf.css.map": "/ValentinesCard/static/css/main.33da91cf.css.map",
-    "main.7d37c3a5.js.map": "/ValentinesCard/static/js/main.7d37c3a5.js.map"
+    "main.e46ec93b.css.map": "/ValentinesCard/static/css/main.e46ec93b.css.map",
+    "main.8c1bb336.js.map": "/ValentinesCard/static/js/main.8c1bb336.js.map"
   },
   "entrypoints": [
-    "static/css/main.33da91cf.css",
-    "static/js/main.7d37c3a5.js"
+    "static/css/main.e46ec93b.css",
+    "static/js/main.8c1bb336.js"
   ]
 }
