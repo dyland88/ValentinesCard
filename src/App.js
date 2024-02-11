@@ -4,12 +4,18 @@ import heartBackground from './images/hearts.jpg';
 import vineBoom from './audio/vine_boom.mp3';
 import yippee from './audio/yippee.mp3';
 import ahh from './audio/ahh.mp3';
-
+import chipichipi from './audio/chipichipi.mp3';
 
 const noPhrases = ['no', 'pleaseee', 'I hate puppies', 'I am picking the wrong choice', 'whyyyyyyy', 'This is your LAST CHANCE', 'FR FR you better not do it this time']
 const yesPhrases = ['yes', 'YES', 'YES!!!', 'PICK THIS ONE!!!', 'why u no click me :(', 'yes 🥺', "OF COURSE!!!"]
 
 function App() {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [noButtonStyle, setNoButtonStyle] = useState({fontSize: `${20 - 2 * phraseIndex}px`});
+  const [yesButtonPressed, setYesButtonPressed] = useState(false);
+
+  const [showNo, setShowNo] = useState(true);
+  const [imageSrc, setImageSrc] = useState('https://media1.tenor.com/m/HzAhXPf2YOEAAAAC/milk-and-mocha.gif');
 
 
   // Called when the "No" button is clicked
@@ -26,16 +32,17 @@ function App() {
     });
   }
 
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [noButtonStyle, setNoButtonStyle] = useState({fontSize: `${20 - 2 * phraseIndex}px`});
-  const [yesButtonPressed, setYesButtonPressed] = useState(false);
-
-  const [showNo, setShowNo] = useState(true);
-  const [imageSrc, setImageSrc] = useState('https://media1.tenor.com/m/HzAhXPf2YOEAAAAC/milk-and-mocha.gif');
-
-
+  const onYesClick = () => {
+    new Audio(yippee).play();
+    new Audio(chipichipi).play();
+    setYesButtonPressed(true);
+    launchConfetti();
+    setShowNo(false);
+    setImageSrc('https://media1.tenor.com/m/wbntPv9hoXoAAAAC/cuddle-panda.gif')
+  }
+  
   // Moves the button when when mouseover
-    const handleMouseOver = (e) => {
+  const handleMouseOver = (e) => {
 
       //if (phraseIndex <= 1 || phraseIndex === noPhrases.length - 1) return;
       if (phraseIndex <= 1) return;
@@ -63,13 +70,6 @@ function App() {
     });
   }
 
-  const onYesClick = () => {
-    new Audio(yippee).play();
-    setYesButtonPressed(true);
-    launchConfetti();
-    setShowNo(false);
-    setImageSrc('https://media1.tenor.com/m/wbntPv9hoXoAAAAC/cuddle-panda.gif')
-  }
   const launchConfetti = () => {
     
     confetti({
