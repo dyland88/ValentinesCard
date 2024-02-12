@@ -10,6 +10,7 @@ import yippee from './audio/yippee.mp3';
 import ahh from './audio/ahh.mp3';
 import chipichipi from './audio/chipichipi.mp3';
 import toothlessAudio from './audio/toothlessAudio.mp3';
+import bruh from './audio/bruh.mp3';
 
 
 
@@ -27,7 +28,7 @@ function App() {
 
   // Called when the "No" button is clicked
   const onNoClick = () => {
-    const audioFiles = [vineBoom, ahh];
+    const audioFiles = [vineBoom, ahh, bruh];
     const randomAudioIndex = Math.floor(Math.random() * audioFiles.length);
     new Audio(audioFiles[randomAudioIndex]).play();
     
