@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/ValentinesCard/static/css/main.bcb4697c.css",
-    "main.js": "/ValentinesCard/static/js/main.3f3f7dec.js",
+    "main.css": "/ValentinesCard/static/css/main.31a5b4c0.css",
+    "main.js": "/ValentinesCard/static/js/main.eba9d8e5.js",
+    "static/media/toothless_dancing.gif": "/ValentinesCard/static/media/toothless_dancing.b9786c8f1d30e38eb4b8.gif",
     "static/media/hearts.jpg": "/ValentinesCard/static/media/hearts.781c3e0fa2cdcf2d91e8.jpg",
     "static/media/chipichipi.mp3": "/ValentinesCard/static/media/chipichipi.de7aefe40a4632796fe8.mp3",
     "static/media/vine_boom.mp3": "/ValentinesCard/static/media/vine_boom.84bc79367eed08f227a7.mp3",
@@ -9,11 +10,11 @@
     "static/media/ahh.mp3": "/ValentinesCard/static/media/ahh.98be230bb36ee425ef0e.mp3",
     "static/media/yippee.mp3": "/ValentinesCard/static/media/yippee.dd360f2f1555606d607e.mp3",
     "index.html": "/ValentinesCard/index.html",
-    "main.bcb4697c.css.map": "/ValentinesCard/static/css/main.bcb4697c.css.map",
-    "main.3f3f7dec.js.map": "/ValentinesCard/static/js/main.3f3f7dec.js.map"
+    "main.31a5b4c0.css.map": "/ValentinesCard/static/css/main.31a5b4c0.css.map",
+    "main.eba9d8e5.js.map": "/ValentinesCard/static/js/main.eba9d8e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcb4697c.css",
-    "static/js/main.3f3f7dec.js"
+    "static/css/main.31a5b4c0.css",
+    "static/js/main.eba9d8e5.js"
   ]
 }
