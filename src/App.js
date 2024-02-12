@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
+
 import heartBackground from './images/hearts.jpg';
+import raccoonHeart from './images/raccoon_heart.jpg';
+import toothlessDancing from './images/toothless_dancing.gif';
+
 import vineBoom from './audio/vine_boom.mp3';
 import yippee from './audio/yippee.mp3';
 import ahh from './audio/ahh.mp3';
 import chipichipi from './audio/chipichipi.mp3';
-import raccoonHeart from './images/raccoon_heart.jpg';
+import toothlessAudio from './audio/toothlessAudio.mp3';
+
+
 
 const noPhrases = ['no', 'pleaseee', 'I hate puppies', 'I am picking the wrong choice', 'whyyyyyyy', 'This is your LAST CHANCE', 'FR FR you better not do it this time']
 const yesPhrases = ['yes', 'YES', 'YES!!!', 'PICK THIS ONE!!!', 'why u no click me :(', 'yes 🥺', "OF COURSE!!!"]
@@ -88,8 +94,19 @@ function App() {
     <main className="w-screen h-screen overflow-hidden flex justify-center items-center bg-white-100"
     style={{backgroundImage: `${yesButtonPressed ? `url(${heartBackground})` : 'none'}`
     }}>
+      <div className="absolute left-0 top-0">
+      {yesButtonPressed && (
+        <button onClick={() => { new Audio(toothlessAudio).play();}}>
+          <img 
+            src={toothlessDancing}
+            alt="yippee"
+            style={{ width: 'auto', height: '250px'}}
+          />
+        </button>
+      )}
+      </div>
+      
       {/* This div centers the content horizontally */}
-     
       <div>
         <div className="flex justify-center pb-10">
           <img 
